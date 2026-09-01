@@ -1,0 +1,41 @@
+{
+  "name": "ai-dance-chibi-studio",
+  "version": "1.0.0",
+  "description": "AI Dance Motion Tracker & 3D Chibi Audition Character Retargeting Studio",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && tsc -p tsconfig.electron.json",
+    "electron:dev": "concurrently -k \"vite\" \"wait-on tcp:5173 && tsc -p tsconfig.electron.json && electron .\"",
+    "electron:build": "npm run build && electron-builder",
+    "start": "tsc -p tsconfig.electron.json && electron .",
+    "shortcut": "node scripts/create_desktop_shortcut.js"
+  },
+  "keywords": [
+    "dance",
+    "ai",
+    "motion-tracking",
+    "chibi",
+    "audition",
+    "threejs",
+    "electron"
+  ],
+  "author": "Antigravity AI",
+  "license": "MIT",
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "lucide": "^0.475.0",
+    "three": "^0.173.0"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^22.13.4",
+    "@types/three": "^0.173.0",
+    "concurrently": "^9.1.2",
+    "electron": "^34.2.0",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "wait-on": "^8.0.2"
+  }
+}
