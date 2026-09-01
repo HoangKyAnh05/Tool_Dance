@@ -1,7 +1,4 @@
 node_modules/
-dist/
-dist-electron/
-dist-renderer/
 *.log
 .DS_Store
 Thumbs.db
