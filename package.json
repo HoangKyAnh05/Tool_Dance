@@ -2,13 +2,15 @@
   "name": "ai-dance-chibi-studio",
   "version": "1.0.0",
   "description": "AI Dance Motion Tracker & 3D Chibi Audition Character Retargeting Studio",
-  "main": "dist-electron/main.js",
+  "main": "server.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && tsc -p tsconfig.electron.json",
+    "build": "vite build",
+    "build:electron": "vite build && tsc -p tsconfig.electron.json",
+    "start": "node server.js",
+    "electron": "tsc -p tsconfig.electron.json && electron .",
     "electron:dev": "concurrently -k \"vite\" \"wait-on tcp:5173 && tsc -p tsconfig.electron.json && electron .\"",
-    "electron:build": "npm run build && electron-builder",
-    "start": "tsc -p tsconfig.electron.json && electron .",
+    "electron:build": "npm run build:electron && electron-builder",
     "shortcut": "node scripts/create_desktop_shortcut.js"
   },
   "keywords": [
